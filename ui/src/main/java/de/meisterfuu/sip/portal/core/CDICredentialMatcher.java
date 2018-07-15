@@ -14,13 +14,15 @@ import javax.enterprise.inject.spi.CDI;
 public class CDICredentialMatcher implements CredentialsMatcher {
 
 
-    public CDICredentialMatcher() {
+    private LoginFacade loginFacade;
+
+    public CDICredentialMatcher(LoginFacade loginFacade) {
+        this.loginFacade = loginFacade;
     }
 
     @Override
     public boolean doCredentialsMatch(AuthenticationToken authenticationToken, AuthenticationInfo authenticationInfo) {
         UsernamePasswordToken usernamePasswordToken = (UsernamePasswordToken) authenticationToken;
-        LoginFacade loginFacade = CDI.current().select(LoginFacade.class).get();
         return loginFacade.checkPassword(usernamePasswordToken.getUsername(), usernamePasswordToken.getPassword());
     }
 }

@@ -2,6 +2,7 @@ package de.meisterfuu.sip.portal.views;
 
 import com.vaadin.cdi.CDIView;
 import com.vaadin.icons.VaadinIcons;
+import com.vaadin.navigator.ViewChangeListener;
 import com.vaadin.ui.*;
 import com.vaadin.ui.renderers.ComponentRenderer;
 import com.vaadin.ui.renderers.HtmlRenderer;
@@ -9,6 +10,7 @@ import de.meisterfuu.sip.portal.core.AbstractView;
 import de.meisterfuu.sip.portal.domain.Game;
 import de.meisterfuu.sip.portal.domain.Genre;
 import de.meisterfuu.sip.portal.facades.GameFacade;
+import org.apache.shiro.SecurityUtils;
 
 import javax.inject.Inject;
 import java.util.stream.Collectors;
@@ -82,5 +84,12 @@ public class GamesView extends AbstractView {
 //        layout.addComponent(txtHello);
 //        layout.setComponentAlignment(txtHello, Alignment.MIDDLE_CENTER);
         return layout;
+    }
+
+    @Override
+    public void enter(ViewChangeListener.ViewChangeEvent event) {
+        super.enter(event);
+
+
     }
 }
