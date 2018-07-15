@@ -1,0 +1,150 @@
+$v-app-loading-text: "";
+$v-background-color: #444d50;
+$v-background-color-dark: darken($v-background-color, 10% );
+$v-focus-color: #07a9ca;
+$v-focus-style: 0 0 3px 2px $v-focus-color;
+$v-bevel-depth: 0%;
+//$v-gradient: v-linear 12%;
+//$v-border-radius: 0px;
+$v-font-family: Roboto, sans-serif;
+$v-font-weight: 400;
+$v-font-weight--header: 400;
+//$v-bevel: inset 0 1px 2px v-tint, inset 0 0 1px (v-tint 0.1);
+//$v-shadow: 0 0 0 3px rgba(0,0,0,0.32), 0 1px 0 3px rgba(255,255,255,0.14);
+//$v-textfield-bevel: inset 0 2px 2px v-shade;
+//$v-textfield-shadow: $v-shadow;
+$v-unit-size: 40px;
+$v-overlay-shadow: 0 0 0 3px (v-shade 8), 0 5px 10px (v-shade 4);
+$v-component-group-spacing: 6px;
+$v-focus-style: none;
+
+@import "../valo/valo.scss";
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+    //transform: rotateY(0deg);
+  }
+
+  50% {
+    transform: translateY(-10px);
+    //transform: rotateY(180deg);
+  }
+}
+
+@mixin sip {
+  @include valo;
+
+  .no-focus:focus {
+      outline: none !important;
+  }
+
+  .v-menubar:after {
+    display: none;
+  }
+
+  .v-button {
+    color: white;
+  }
+
+  .topmenu {
+    background-color: $v-background-color-dark;
+  }
+
+  .roundimage {
+    border-radius: 8px;
+  }
+
+  .profilepicture {
+    max-height: 500px;
+  }
+
+  .space-bottom{
+    margin-bottom: 50px;
+  }
+
+  .min-fullsize{
+    min-height: 100%;
+  }
+
+
+  .forcenotscrollable{
+    overflow-x: hidden !important;
+  }
+  .forcescrollable{
+    overflow-y: auto !important;
+  }
+
+  .v-panel {
+    border-radius: 8px;
+    border: none;
+  }
+  .v-app-loading {
+    opacity: .8;
+    filter: alpha(opacity=80);
+    width: 100%; height: 100%;
+    background: transparent url(../sip/img/loading.png) no-repeat fixed center;
+  }
+
+  .v-app-loading::before {
+    background: transparent;
+  }
+
+  .v-loading-indicator,
+  .v-loading-indicator-delay,
+  .v-loading-indicator-wait  {
+    position: fixed !important;
+    z-index: 99999;
+    //top: 50%;
+    opacity: 1;
+    //height: 100%;
+    //width: 100%;
+    //left: 50%;
+    //transform: translate(-50%, -50%);
+
+    top: 50%;
+    left: 50%;
+    right: auto;
+    width: 140px;
+    height: 200px;
+    margin-top: -100px;
+    margin-left: -70px;
+
+    background: transparent url(../sip/img/loading.png) no-repeat;
+    pointer-events: none;
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+    animation: bounce 1s ease-in-out;
+    animation-fill-mode: both;
+    animation-iteration-count:infinite;
+  }
+
+
+  .v-reconnect-dialog .spinner {
+    border-top-color: red;
+    border-right-color: red;
+  }
+
+  .v-grid-header .v-grid-cell {
+    //background-image: linear-gradient(to bottom,#44b3d7 2%, #07a9ca 98%);
+    //background: linear-gradient(to bottom,#44b3d7 2%, #07a9ca 98%);
+    //background: linear-gradient(to bottom,#44b3d7 2%, #07a9ca 98%);
+    @include background-image(linear-gradient(top, #44b3d7, #07a9ca));
+    color: #3b4245 !important;
+    font-weight: 600 !important;
+  }
+
+  .v-grid-tablewrapper {
+    //border: 1px solid #44b3d7;
+    border: none;
+  }
+
+  .focus-text-color{
+    color: $v-focus-color;
+  }
+
+  .valo-menu-responsive[width-range~="0-800px"] {
+    padding-top: 0px !important;
+  }
+}

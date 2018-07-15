@@ -1,0 +1,31 @@
+target
+nb-configuration.xml
+*.cache
+rebel.xml
+.jrebel_disabled
+/AP2_Services/cda.xml
+/AP2_IHE_Services/text.txt
+/ConnectathonMaven/nbproject/
+.idea
+Grid
+*.iml
+/PDF Release/out
+out
+widgetsets
+/AP2_Portal/*.iml
+/AP2_Services/*.iml
+/AP2_Services/src/test/resources/arquillian.xml
+/AP2/src/main/resources/rebel-remote.xml
+/AP2_Domain/src/main/resources/rebel-remote.xml
+/AP2_Facades/src/main/resources/rebel-remote.xml
+/AP2_IHE_Services/src/main/resources/rebel-remote.xml
+/AP2_Portal/src/main/resources/rebel-remote.xml
+/AP2_RZV_Services/src/main/resources/rebel-remote.xml
+/AP2_Services/src/main/resources/rebel-remote.xml
+/HtmlButtonRenderer/html-buttonrenderer-addon/src/main/resources/rebel-remote.xml
+/Language Key Generator/src/main/resources/rebel-remote.xml
+/excelimporter/src/main/resources/rebel-remote.xml
+/security/ShiroWSTrustUserConnector/src/main/resources/rebel-remote.xml
+/smime-mailsender/src/main/resources/rebel-remote.xml
+/AP2_Portal/src/main/webapp/VAADIN/themes/mytheme/styles.css
+/wildfly-11.0.0.Final
